@@ -8,4 +8,4 @@ default:
 clean:
 	$(node-waf) clean
 test:
-	node test.js
+	node ./test/test.js

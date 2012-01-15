@@ -16,6 +16,7 @@ class NxObject : ObjectWrap {
     ~NxObject();
     void Init(Handle<Object> target);
 
-    int getCount();
-    void setCount(int value);
+    static Handle<Value> GetCount(Local<String> property, const AccessorInfo& info);
+    static void SetCount(Local<String> property, Local<Value> value, const AccessorInfo& info);
+    static Handle<Value> IncrementCount(const Arguments& args);
 };
