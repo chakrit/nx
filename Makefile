@@ -1,5 +1,11 @@
 
+# auto-find waf path?
+node-waf = node-waf
+
 default:
-	# mkdir -p ./out/
-	# g++ -Wall nx.cpp -o out/nx -I./deps/node/src -I./deps/node/deps/v8/include -I./deps/node/deps/uv/include
-	./deps/node/tools/node-waf
+	$(node-waf) configure build
+	ls ./build/Release/*.node
+clean:
+	$(node-waf) clean
+test:
+	node test.js
